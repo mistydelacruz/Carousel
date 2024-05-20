@@ -1,9 +1,10 @@
 /***************************************
 * Created by: Misty Dela Cruz
 * Created on: 2/7/2024
-* Last Modified: 4/29/2024
+* Last Modified: 5/20/2024
 * Updates:
-* Added the Button component and coding out the layout of the page
+* Used MUI buttons as placeholders for the Atlassian deisgn system.
+* Carousel is working on the right side of the page.
 ***************************************/
 
 import './App.css'
@@ -15,6 +16,9 @@ function App() {
 
   return (
     <>
+    {/***************************************
+    *               LEFT SIDE               *
+    ***************************************/}
       <div className='split left'>             {/*Divider for the left side of the page*/}
         <div className='logo'>                 {/*Divider for the logo*/}
           <img src={Logo} alt='logo'/>
@@ -26,13 +30,16 @@ function App() {
             <p>Don't have an account? <em>Register</em></p>
           </div>
           <div className='first-button'>                                                        {/*Divider for the first button login*/}
-            <button>Login with CAC</button>
+            <Button sx={{margin: 'auto', width: '100%'}}>Login with CAC</Button>
           </div>
           <div className='sec-button'>                                                          {/*Divider for the second button login*/}
-            <button>Login with YubiKey</button>
+            <Button sx={{margin: 'auto', width: '100%'}}>Login with YubiKey</Button>
           </div>
         </div>
       </div>
+    {/***************************************
+    *               RIGHT SIDE              *
+    ***************************************/}
       <div className='split right'>            {/*Divider for the right side: Image Carousel*/}
         <Carousel />
       </div>
