@@ -1,39 +1,78 @@
 /***************************************
-* Created by: Misty Dela Cruz
-* Created on: 4/15/2024
-* Last Modified: 5/20/2024
-* Updates:
-* Carousel is working.
-* Next: make it looping or endless.
-***************************************/
+ * Created by: Misty Dela Cruz
+ * Created on: 4/15/2024
+ * Last Modified: 5/20/2024
+ * Updates:
+ * Carousel is working.
+ * Next: make it looping or endless.
+ ***************************************/
 
 import React, { useState } from "react";
-import './Carousel.css'
+import "./Carousel.css";
 import { images } from "../data/carouselData";
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 function Carousel() {
-    const [currImg, setCurrImg] = useState(0);                       {/*useState to change between images*/}
-    return (
-        <>
-            <div className="carousel">                               {/*Divider for the logo*/}
-                <div className="carousel-inner" style={{backgroundImage: `url(${images[currImg].img})`}}>       {/*Divider for the inner carousel*/}
-                    <div className="carousel-left" 
-                    onClick={() => 
-                    {currImg > 0 && setCurrImg(currImg - 1);}}>                           {/*Divider for the left arrow icon, checks if currImg > 0 AND currImg decreases by 1*/}
-                        <KeyboardArrowLeftIcon style={{fontSize: 30}}/>
-                    </div>
-                    <div className="carousel-center"></div>
-                    <div className="carousel-right" 
-                    onClick={() => 
-                    {currImg < (images.length - 1) && setCurrImg(currImg + 1);}}>         {/*Divider for the right arrow icon, checks if currImg < images.length - 1 AND currImg increases by 1*/}
-                        <KeyboardArrowRightIcon style={{fontSize: 30}}/>
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+  const [currImg, setCurrImg] = useState(0);
+
+  {
+    /***************************************
+     *      CAROUSEL LEFT CLICK HANDLE     *
+     * Uses ternary logic
+     * Checks if currImg is EQUAL to 0
+     * If so, set currImg to images.length (3) - 1 (last img in the array (2))
+     * Else, keep clicking left
+     ***************************************/
+  }
+  const handleLeftClick = () => {
+    setCurrImg((currImg) => (currImg === 0 ? images.length - 1 : currImg - 1));
+  };
+
+  {
+    /***************************************
+     *     CAROUSEL RIGHT CLICK HANDLE     *
+     * Uses ternary logic
+     * Checks if currImg is EQUAL to images.length (3) - 1 (last img in the array (2))
+     * If so, set currImg to 0
+     * Else, keep clicking right
+     ***************************************/
+  }
+  const handleRightClick = () => {
+    setCurrImg((currImg) => (currImg === images.length - 1 ? 0 : currImg + 1));
+  };
+
+  return (
+    <>
+      <div className="carousel">
+        {/*Divider for the inner carousel and image*/}
+        <div
+          className="carousel-inner"
+          style={{ backgroundImage: `url(${images[currImg].img})` }}
+        >
+          {/***************************************
+           *               LEFT ARROW             *
+           ***************************************/}
+          <div className="carousel-left" onClick={handleLeftClick}>
+            <KeyboardArrowLeftIcon style={{ fontSize: 30 }} />
+          </div>
+
+          {/***************************************
+           *            CAROUSEL CENTER          *
+           ***************************************/}
+          <div className="carousel-center"></div>
+
+          {/***************************************
+           *              RIGHT ARROW             *
+           ***************************************/}
+          <div className="carousel-right" onClick={handleRightClick}>
+            {/*Divider for the right arrow icon, checks if currImg < images.length - 1 AND currImg increases by 1*/}
+            <KeyboardArrowRightIcon style={{ fontSize: 30 }} />
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Carousel
+export default Carousel;
