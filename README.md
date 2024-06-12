@@ -1,8 +1,18 @@
-# React + Vite
+# React Image Carousel 🖼️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project utilizes useStates to create an image carousel.
 
-Currently, two official plugins are available:
+👾 How to run the code! 👾
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Step 1: run "npm install"
+- Step 2: run "npm run dev"
+- Step 3: Check for any errors on the terminal
+- Step 4: If there are no errors, click on the localhost link to see if the landing page is being displayed.
+
+Please see the following images of the working support page:
+
+![Carousel_First_Img](https://github.com/mistydelacruz/Carousel/assets/153684965/31db6629-56e2-4c24-a72b-9054fde8bbac)
+
+![Carousel_Sec_Img](https://github.com/mistydelacruz/Carousel/assets/153684965/470d999d-fb09-4414-a42e-48d7e200f074)
+
+![Carousel_Third_Img](https://github.com/mistydelacruz/Carousel/assets/153684965/6b690bea-32ac-4267-ab34-ddcb0b3a473c)
