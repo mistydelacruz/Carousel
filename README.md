@@ -4,10 +4,10 @@ This project utilizes useStates to create an image carousel.
 
 👾 How to run the code! 👾
 
-Step 1: run "npm install"
-Step 2: run "npm run dev"
-Step 3: Check for any errors on the terminal
-Step 4: If there are no errors, click on the localhost link to see if the landing page is being displayed.
+- Step 1: run "npm install"
+- Step 2: run "npm run dev"
+- Step 3: Check for any errors on the terminal
+- Step 4: If there are no errors, click on the localhost link to see if the landing page is being displayed.
 
 Please see the following images of the working support page:
 
