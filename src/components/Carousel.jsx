@@ -44,8 +44,8 @@ function Carousel() {
     - Left side
     - Inner (center)
     - Right side
-  * Left side controls the left arrow for navigating (same for right side)
-  * The inner portion displays the images as background images
+   * Left side controls the left arrow for navigating (same for right side)
+   * The inner portion displays the images as background images
   ****************************************/
   return (
     <>
