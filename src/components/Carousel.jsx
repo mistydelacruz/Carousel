@@ -3,8 +3,8 @@
  * Created on: 4/15/2024
  * Last Modified: 5/20/2024
  * Updates:
- * Carousel is working.
- * Next: make it looping or endless.
+ * Carousel is working
+ * Next: make it looping or endless
  ***************************************/
 
 import React, { useState } from "react";
@@ -16,64 +16,54 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 function Carousel() {
   const [currImg, setCurrImg] = useState(0);
 
-  {
-    /***************************************
-     *      CAROUSEL LEFT CLICK HANDLE     *
-     * Uses ternary logic
-     * Checks if currImg is EQUAL to 0
-     * If so, set currImg to images.length (3) - 1 (last img in the array (2))
-     * Else, keep clicking left
-     ***************************************/
-  }
+  /***************************************
+   *     CAROUSEL LEFT CLICK HANDLE      *
+   * Uses ternary logic
+   * Checks if currImg is EQUAL to 0
+   * If so, set currImg to images.length (3) - 1 (last img in the array (2))
+   * Else, keep clicking left
+   ***************************************/
   const handleLeftClick = () => {
     setCurrImg((currImg) => (currImg === 0 ? images.length - 1 : currImg - 1));
   };
 
-  {
-    /***************************************
-     *     CAROUSEL RIGHT CLICK HANDLE     *
-     * Uses ternary logic
-     * Checks if currImg is EQUAL to images.length (3) - 1 (last img in the array (2))
-     * If so, set currImg to 0
-     * Else, keep clicking right
-     ***************************************/
-  }
+  /***************************************
+   *     CAROUSEL RIGHT CLICK HANDLE     *
+   * Uses ternary logic
+   * Checks if currImg is EQUAL to images.length (3) - 1 (last img in the array (2))
+   * If so, set currImg to 0
+   * Else, keep clicking right
+   ***************************************/
   const handleRightClick = () => {
     setCurrImg((currImg) => (currImg === images.length - 1 ? 0 : currImg + 1));
   };
 
-  {
-    /***************************************
-     *       IMAGE CAROUSEL COMPONENT      *
-     * Carousel is divided into 3 parts
-     * Left side, inner, and right side
-     * Left side controls the left arrow for navigating (same for right side)
-     * The inner portion displays the images as background images
-     ***************************************/
-  }
+  /***************************************
+   *       IMAGE CAROUSEL COMPONENT      *
+   * Carousel is divided into 3 parts
+    - Left side
+    - Inner (center)
+    - Right side
+  * Left side controls the left arrow for navigating (same for right side)
+  * The inner portion displays the images as background images
+  ****************************************/
   return (
     <>
       <div className="carousel">
-        {/*Divider for the inner carousel and images*/}
+        {/***** INNER CAROUSEL *****/}
         <div
           className="carousel-inner"
           style={{ backgroundImage: `url(${images[currImg].img})` }}
         >
-          {/***************************************
-           *               LEFT ARROW             *
-           ***************************************/}
+          {/***** LEFT ARROW *****/}
           <div className="carousel-left" onClick={handleLeftClick}>
             <KeyboardArrowLeftIcon style={{ fontSize: 30 }} />
           </div>
 
-          {/***************************************
-           *            CAROUSEL CENTER          *
-           ***************************************/}
+          {/***** CENTER *****/}
           <div className="carousel-center"></div>
 
-          {/***************************************
-           *              RIGHT ARROW             *
-           ***************************************/}
+          {/***** RIGHT ARROW *****/}
           <div className="carousel-right" onClick={handleRightClick}>
             <KeyboardArrowRightIcon style={{ fontSize: 30 }} />
           </div>
