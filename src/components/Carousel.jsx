@@ -42,10 +42,19 @@ function Carousel() {
     setCurrImg((currImg) => (currImg === images.length - 1 ? 0 : currImg + 1));
   };
 
+  {
+    /***************************************
+     *       IMAGE CAROUSEL COMPONENT      *
+     * Carousel is divided into 3 parts
+     * Left side, inner, and right side
+     * Left side controls the left arrow for navigating (same for right side)
+     * The inner portion displays the images as background images
+     ***************************************/
+  }
   return (
     <>
       <div className="carousel">
-        {/*Divider for the inner carousel and image*/}
+        {/*Divider for the inner carousel and images*/}
         <div
           className="carousel-inner"
           style={{ backgroundImage: `url(${images[currImg].img})` }}
@@ -66,7 +75,6 @@ function Carousel() {
            *              RIGHT ARROW             *
            ***************************************/}
           <div className="carousel-right" onClick={handleRightClick}>
-            {/*Divider for the right arrow icon, checks if currImg < images.length - 1 AND currImg increases by 1*/}
             <KeyboardArrowRightIcon style={{ fontSize: 30 }} />
           </div>
         </div>
